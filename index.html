@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>VEYQORO · Join the waiting list</title>
-<meta name="description" content="Verified tenants. Verified landlords. Real flats. Join the VEYQORO waiting list in Münster.">
+<meta name="description" content="Verified international students. Verified landlords. Real flats. Join the VEYQORO waiting list in Münster.">
 <style>
 :root{--ink:#14202b;--muted:#4a5a66;--purple:#6d3fd0;--soft:#ede9fe;--bg:#faf8ff;--line:#e2dcf5;--pink:#e0559c;--blue:#3b82f6}
 *{box-sizing:border-box;margin:0}
@@ -12,7 +12,11 @@ body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;colo
 .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
 header{padding:24px 0}
 header img{height:44px;display:block}
+header{display:flex;justify-content:space-between;align-items:center;gap:16px}
 header .bar{display:inline-block;background:#14202b;border-radius:14px;padding:10px 18px}
+.lang{display:flex;gap:6px}
+.lang button{margin:0;width:auto;font-size:14px;font-weight:700;padding:8px 14px;border-radius:99px;background:#fff;color:var(--purple);border:1px solid var(--line)}
+.lang button.on{background:var(--purple);color:#fff;border-color:var(--purple)}
 .hero{padding:40px 0 56px;display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
 .hero h1{font-size:clamp(34px,5vw,56px);line-height:1.08;font-weight:800;letter-spacing:-.02em}
 .hero h1 span{background:linear-gradient(90deg,var(--purple),var(--pink));-webkit-background-clip:text;background-clip:text;color:transparent}
@@ -50,56 +54,55 @@ footer a{color:var(--muted)}
 </head>
 <body>
 <div class="wrap">
-<header><div class="bar"><img src="logo.png" alt="VEYQORO"></div></header>
+<header><div class="bar"><img src="logo.png" alt="VEYQORO"></div><div class="lang" role="group" aria-label="Language"><button type="button" data-l="en">EN</button><button type="button" data-l="de">DE</button></div></header>
 
 <main class="hero">
   <div>
-    <span class="pill">Münster · Waiting list</span>
-    <h1>Finding a flat should feel <span>safe</span>, not like a gamble.</h1>
-    <p class="lead">VEYQORO is building a Trust Profile for tenants and landlords: verified people, checked flats, no fake listings. We start in Münster. Leave your email and we will tell you when we are ready.</p>
+    <span class="pill" data-i="pill">Münster · Waiting list</span>
+    <h1 data-i="h1">Finding a flat should feel <span>safe</span>, not like a gamble.</h1>
+    <p class="lead" data-i="lead">VEYQORO is building a Trust Profile for international students and the landlords who rent to them: verified people, checked flats, no fake listings. We start in Münster. Leave your email and we will tell you when we are ready.</p>
   </div>
 
   <div class="card">
-    <h2>Join the waiting list</h2>
-    <p class="sub">Free. No spam. We only write to you about VEYQORO.</p>
+    <h2 data-i="cardh">Join the waiting list</h2>
+    <p class="sub" data-i="sub">Free. No spam. We only write to you about VEYQORO.</p>
     <form id="f" novalidate>
-      <label for="name">Name</label>
+      <label for="name" data-i="lname">Name</label>
       <input id="name" name="name" type="text" autocomplete="name" required>
-      <label for="email">Email</label>
+      <label for="email" data-i="lemail">Email</label>
       <input id="email" name="email" type="email" autocomplete="email" required>
-      <label for="role">I am a …</label>
+      <label for="role" data-i="lrole">I am a …</label>
       <select id="role" name="role" required>
-        <option value="">Please choose</option>
-        <option>Tenant / student looking for a flat</option>
-        <option>Private landlord</option>
-        <option>Property manager / estate agent</option>
-        <option>Other</option>
+        <option value="" data-i="o0">Please choose</option>
+        <option value="International tenant" data-i="o1">International tenant (student or newcomer)</option>
+        <option value="Landlord" data-i="o2">Landlord</option>
+        <option value="Property manager" data-i="o3">Property manager</option>
       </select>
       <input class="hp" type="text" name="company" tabindex="-1" autocomplete="off" aria-hidden="true">
       <div class="check">
         <input id="consent" type="checkbox" required>
-        <label for="consent" style="margin:0;font-weight:400">I agree that VEYQORO stores my name and email to contact me about the waiting list. I can ask to be deleted at any time. <a href="privacy.html">Privacy</a></label>
+        <label for="consent" style="margin:0;font-weight:400"><span data-i="consent">I agree that VEYQORO stores my name and email to contact me about the waiting list. I can ask to be deleted at any time.</span> <a href="privacy.html" class="plink"><span data-i="priv">Privacy</span></a></label>
       </div>
-      <button id="btn" type="submit">Join the waiting list</button>
+      <button id="btn" type="submit" data-i="btn">Join the waiting list</button>
       <div id="msg" class="msg" role="status"></div>
     </form>
   </div>
 </main>
 
 <section class="how">
-  <h2>What we are building</h2>
+  <h2 data-i="whath">What we are building</h2>
   <div class="grid">
-    <div class="step"><b class="n">1</b><h3>Verified tenants</h3><p>A Trust Profile that shows landlords who you are, so a good application is easy to trust.</p></div>
-    <div class="step"><b class="n">2</b><h3>Verified landlords</h3><p>Tenants can see who is behind a listing before they send money or documents.</p></div>
-    <div class="step"><b class="n">3</b><h3>Real flats</h3><p>Flat checks against fake and misleading offers.</p></div>
+    <div class="step"><b class="n">1</b><h3 data-i="s1h">Verified tenants</h3><p data-i="s1p">A Trust Profile that shows landlords who you are, so a good application is easy to trust.</p></div>
+    <div class="step"><b class="n">2</b><h3 data-i="s2h">Verified landlords</h3><p data-i="s2p">Tenants can see who is behind a listing before they send money or documents.</p></div>
+    <div class="step"><b class="n">3</b><h3 data-i="s3h">Real flats</h3><p data-i="s3p">Flat checks against fake and misleading offers.</p></div>
   </div>
 </section>
 
-<div class="note">Early stage: we are a student team in Münster. The prototype exists, the product does not yet. The waiting list helps us learn who needs this most.</div>
+<div class="note" data-i="note">Early stage: we are a student team in Münster. The prototype exists, the product does not yet. The waiting list helps us learn who needs this most.</div>
 
 <footer>
   <span>© VEYQORO · Münster</span>
-  <span><a href="mailto:veyqoro1109@gmail.com">veyqoro1109@gmail.com</a> · <a href="privacy.html">Privacy</a></span>
+  <span><a href="mailto:veyqoro1109@gmail.com">veyqoro1109@gmail.com</a> · <a href="privacy.html" class="plink" data-i="priv">Privacy</a></span>
 </footer>
 </div>
 
@@ -108,6 +111,44 @@ footer a{color:var(--muted)}
 var ENDPOINT = "https://formspree.io/f/mrpqzpvy";
 var TO = "veyqoro1109@gmail.com";
 
+
+var T = {
+ en:{pill:"Münster · Waiting list",h1:'Finding a flat should feel <span>safe</span>, not like a gamble.',
+  lead:"VEYQORO is building a Trust Profile for international students and the landlords who rent to them: verified people, checked flats, no fake listings. We start in Münster. Leave your email and we will tell you when we are ready.",
+  cardh:"Join the waiting list",sub:"Free. No spam. We only write to you about VEYQORO.",lname:"Name",lemail:"Email",lrole:"I am a …",
+  o0:"Please choose",o1:"International tenant (student or newcomer)",o2:"Landlord",o3:"Property manager",
+  consent:"I agree that VEYQORO stores my name and email to contact me about the waiting list. I can ask to be deleted at any time.",priv:"Privacy",btn:"Join the waiting list",
+  whath:"What we are building",
+  s1h:"Verified tenants",s1p:"A Trust Profile that shows landlords who you are, so a good application is easy to trust.",
+  s2h:"Verified landlords",s2p:"Tenants can see who is behind a listing before they send money or documents.",
+  s3h:"Real flats",s3p:"Flat checks against fake and misleading offers.",
+  note:"Early stage: we are a student team in Münster. The prototype exists, the product does not yet. The waiting list helps us learn who needs this most.",
+  e1:"Please fill in your name, a valid email and your role.",e2:"Please tick the box so we may store your email.",
+  ok:"Thank you! You are on the list.",err:"Something went wrong. Please email us at ",mail:"Your email app should open. Please press send to finish.",title:"VEYQORO · Join the waiting list"},
+ de:{pill:"Münster · Warteliste",h1:'Die Wohnungssuche sollte sich <span>sicher</span> anfühlen, nicht wie ein Glücksspiel.',
+  lead:"VEYQORO baut ein Vertrauensprofil für internationale Studierende und die Vermieter, die an sie vermieten: geprüfte Personen, geprüfte Wohnungen, keine gefälschten Anzeigen. Wir starten in Münster. Hinterlassen Sie Ihre E-Mail-Adresse, dann melden wir uns, sobald wir so weit sind.",
+  cardh:"Auf die Warteliste",sub:"Kostenlos. Kein Spam. Wir schreiben Ihnen nur zu VEYQORO.",lname:"Name",lemail:"E-Mail",lrole:"Ich bin …",
+  o0:"Bitte auswählen",o1:"Internationale/r Mieter/in (Studierende/r oder Neuankömmling)",o2:"Vermieter/in",o3:"Hausverwaltung",
+  consent:"Ich bin damit einverstanden, dass VEYQORO meinen Namen und meine E-Mail-Adresse speichert, um mich zur Warteliste zu kontaktieren. Ich kann jederzeit die Löschung verlangen.",priv:"Datenschutz",btn:"Auf die Warteliste",
+  whath:"Was wir bauen",
+  s1h:"Geprüfte Mieter",s1p:"Ein Vertrauensprofil zeigt Vermietern, wer Sie sind, damit eine gute Bewerbung leicht zu vertrauen ist.",
+  s2h:"Geprüfte Vermieter",s2p:"Mieter sehen, wer hinter einer Anzeige steht, bevor sie Geld oder Unterlagen schicken.",
+  s3h:"Echte Wohnungen",s3p:"Wohnungsprüfungen gegen gefälschte und irreführende Angebote.",
+  note:"Frühe Phase: Wir sind ein Studierenden-Team in Münster. Den Prototyp gibt es, das Produkt noch nicht. Die Warteliste hilft uns zu verstehen, wer das am meisten braucht.",
+  e1:"Bitte geben Sie Ihren Namen, eine gültige E-Mail-Adresse und Ihre Rolle an.",e2:"Bitte setzen Sie den Haken, damit wir Ihre E-Mail-Adresse speichern dürfen.",
+  ok:"Vielen Dank! Sie stehen auf der Liste.",err:"Etwas ist schiefgelaufen. Bitte schreiben Sie uns an ",mail:"Ihr E-Mail-Programm sollte sich öffnen. Bitte senden Sie die Nachricht ab.",title:"VEYQORO · Auf die Warteliste"}
+};
+var lang = "en";
+(function(){var q=(location.search.match(/[?&]lang=(en|de)/)||[])[1];lang=q||((navigator.language||"en").slice(0,2)==="de"?"de":"en");})();
+function setLang(l){
+  lang=l; document.documentElement.lang=l; document.title=T[l].title;
+  document.querySelectorAll("[data-i]").forEach(function(el){var v=T[l][el.getAttribute("data-i")]; if(v!==undefined) el.innerHTML=v;});
+  document.querySelectorAll(".lang button").forEach(function(b){b.className=b.getAttribute("data-l")===l?"on":"";});
+  document.querySelectorAll("a.plink").forEach(function(a){a.href="privacy.html?lang="+l;});
+}
+document.querySelectorAll(".lang button").forEach(function(b){b.addEventListener("click",function(){setLang(b.getAttribute("data-l"));});});
+setLang(lang);
+
 var f = document.getElementById("f"), msg = document.getElementById("msg"), btn = document.getElementById("btn");
 function show(t, ok){ msg.className = "msg " + (ok ? "ok" : "err"); msg.textContent = t; }
 
@@ -115,18 +156,18 @@ f.addEventListener("submit", function(e){
   e.preventDefault();
   var d = { name: f.name.value.trim(), email: f.email.value.trim(), role: f.role.value };
   if (f.company.value) return;                       // spam trap
-  if (!d.name || !/^\S+@\S+\.\S+$/.test(d.email) || !d.role) return show("Please fill in your name, a valid email and your role.", false);
-  if (!f.consent.checked) return show("Please tick the box so we may store your email.", false);
+  if (!d.name || !/^\S+@\S+\.\S+$/.test(d.email) || !d.role) return show(T[lang].e1, false);
+  if (!f.consent.checked) return show(T[lang].e2, false);
 
   if (!ENDPOINT) {                                   // fallback: opens the person's email app
     var body = "Please add me to the VEYQORO waiting list.%0D%0A%0D%0AName: " + encodeURIComponent(d.name) + "%0D%0ARole: " + encodeURIComponent(d.role);
     window.location.href = "mailto:" + TO + "?subject=" + encodeURIComponent("VEYQORO waiting list") + "&body=" + body;
-    return show("Your email app should open. Please press send to finish.", true);
+    return show(T[lang].mail, true);
   }
   btn.disabled = true;
   fetch(ENDPOINT, { method: "POST", headers: { "Content-Type": "application/json", "Accept": "application/json" }, body: JSON.stringify(d) })
-    .then(function(r){ if (!r.ok) throw 0; f.reset(); show("Thank you! You are on the list.", true); })
-    .catch(function(){ show("Something went wrong. Please email us at " + TO + ".", false); })
+    .then(function(r){ if (!r.ok) throw 0; f.reset(); show(T[lang].ok, true); })
+    .catch(function(){ show(T[lang].err + TO + ".", false); })
     .then(function(){ btn.disabled = false; });
 });
 </script>
